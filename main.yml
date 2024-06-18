@@ -1,0 +1,29 @@
+galaxy_info:
+  author: Martin Westergaard Lassen
+  description: Kafka role specifically designed for Humio
+  company: Humio
+
+  license: Apache
+
+  min_ansible_version: 2.6
+
+  platforms:
+  - name: EL
+    versions:
+    - 7
+  - name: Ubuntu
+    version:
+    - xenial
+    - bionic
+
+  galaxy_tags:
+  - kafka
+  - humio
+
+dependencies:
+  - role: AnsibleShipyard.ansible-zookeeper
+    version: 0.23.0
+  # The java provided by this role is used by kafka not logscale (aka: humio)
+  - role: humio.java
+    version: 0.6.1
+
